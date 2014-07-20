@@ -128,8 +128,8 @@ Bundle "michaeljsmith/vim-indent-object"
 filetype plugin indent on
 
 " VISUAL SETTINGS
-set background=dark
-colorscheme base16-default
+" set background=dark
+" colorscheme base16-default
 hi Keyword cterm=bold
 
 highlight clear SignColumn
