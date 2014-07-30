@@ -1,33 +1,8 @@
-set guifont=Literation\ Mono\ Powerline:h10
+set guifont=Literation\ Mono\ Powerline:h12
 
 python from powerline.vim import setup as powerline_setup
 python powerline_setup()
 python del powerline_setup
-
-set synmaxcol=400 " Prevents vim getting really sluggish if there are long lines of data
-set mouse=a
-set nocompatible
-set autowriteall
-set clipboard+=unnamed " yank goes to clipboard
-set number
-set hidden " prevents losing undo history after save
-set nofoldenable
-set noswapfile
-set nobackup
-
-" Search
-set ignorecase 
-set smartcase
-set gdefault
-set hlsearch
-
-" space/tab settings
-set tabstop=2
-set shiftwidth=2
-set softtabstop=2
-set expandtab
-set smarttab
-set autoindent
 
 " set formatoptions+=o " auto insert current comment leader
 " set formatoptions-=r " but not after <enter> 
@@ -72,6 +47,9 @@ Bundle "the-lambda-church/coquille"
 Bundle "def-lkb/vimbufsync"
 
 " CORE
+Bundle "jpalardy/vim-slime"
+let g:slime_target = "tmux" 
+let g:slime_paste_file = tempname()
 Bundle "terryma/vim-multiple-cursors"
 Bundle "scrooloose/syntastic"
 let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['scala'] }
@@ -114,7 +92,9 @@ Bundle "kongo2002/fsharp-vim"
 Bundle "vim-ruby/vim-ruby" 
 Bundle "jgdavey/vim-blockle"
 Bundle "tpope/vim-rails"
-Bundle "jhenahan/idris-vim"
+
+Bundle "kchmck/vim-coffee-script"
+" Set vim to open the results window after a compile.
 
 Bundle "Markdown"
 
@@ -223,3 +203,27 @@ autocmd FileType coq map <buffer> <leader>cc :CoqToCursor<Enter>
 " Set the filetype for PureScript files.
 autocmd BufRead,BufNewFile *.purs set filetype=haskell
 
+set synmaxcol=400 " Prevents vim getting really sluggish if there are long lines of data
+set mouse=a
+set nocompatible
+set autowriteall
+set clipboard+=unnamed " yank goes to clipboard
+set number
+set hidden " prevents losing undo history after save
+set nofoldenable
+set noswapfile
+set nobackup
+
+" Search
+set ignorecase 
+set smartcase
+set gdefault
+set hlsearch
+
+" space/tab settings
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
+set expandtab
+set smarttab
+set autoindent
